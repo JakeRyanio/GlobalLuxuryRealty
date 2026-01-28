@@ -1,0 +1,16 @@
+{
+  "name": "glr-homepage",
+  "version": "1.0.0",
+  "description": "Global Luxury Realty - Miami's Premier Luxury Real Estate",
+  "scripts": {
+    "build": "tailwindcss -i ./src/input.css -o ./dist/output.css",
+    "watch": "tailwindcss -i ./src/input.css -o ./dist/output.css --watch",
+    "dev": "tailwindcss -i ./src/input.css -o ./dist/output.css --watch"
+  },
+  "keywords": ["real-estate", "luxury", "miami"],
+  "author": "Global Luxury Realty",
+  "license": "ISC",
+  "devDependencies": {
+    "tailwindcss": "^3.4.0"
+  }
+}

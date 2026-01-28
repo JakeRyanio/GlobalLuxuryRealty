@@ -1,0 +1,82 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Custom Base Styles */
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+  
+  body {
+    @apply font-body bg-navy-900 text-white antialiased;
+  }
+}
+
+/* Custom Component Classes */
+@layer components {
+  /* Primary CTA Button - Gold filled */
+  .btn-primary {
+    @apply bg-gold hover:bg-gold-light text-navy-900 font-semibold 
+           px-8 py-4 transition-all duration-300 
+           hover:shadow-lg hover:shadow-gold/30
+           inline-block text-center;
+  }
+  
+  /* Secondary CTA Button - Gold outline */
+  .btn-secondary {
+    @apply border-2 border-gold text-gold hover:bg-gold hover:text-navy-900 
+           font-semibold px-8 py-4 transition-all duration-300
+           inline-block text-center;
+  }
+  
+  /* Navigation link with gold underline effect */
+  .nav-link {
+    @apply relative text-white/80 hover:text-white font-medium transition-colors duration-300
+           after:absolute after:bottom-0 after:left-0 after:w-0 
+           after:h-0.5 after:bg-gold after:transition-all after:duration-300 
+           hover:after:w-full;
+  }
+  
+  /* Property card styling - Note: 'group' class must be added directly in HTML */
+  .property-card {
+    @apply bg-white/5 backdrop-blur-sm border border-white/10 
+           overflow-hidden transform transition-all duration-500 
+           hover:-translate-y-2 hover:border-gold/50 hover:shadow-xl hover:shadow-gold/10;
+  }
+  
+  /* Section container */
+  .section-container {
+    @apply container mx-auto px-6 lg:px-8;
+  }
+  
+  /* Section title styling */
+  .section-title {
+    @apply font-display text-4xl md:text-5xl text-white text-center mb-4;
+  }
+  
+  /* Section subtitle */
+  .section-subtitle {
+    @apply font-body text-lg text-white/70 text-center max-w-2xl mx-auto mb-12;
+  }
+}
+
+/* Scroll Animation Classes */
+@layer utilities {
+  .fade-in-up {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+  }
+  
+  .fade-in-up.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  
+  /* Stagger animation delays */
+  .delay-100 { transition-delay: 100ms; }
+  .delay-200 { transition-delay: 200ms; }
+  .delay-300 { transition-delay: 300ms; }
+  .delay-400 { transition-delay: 400ms; }
+}
